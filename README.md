@@ -1,6 +1,6 @@
 
     <h2>Liste des membres du groupe1</h2>
-      <table class="table table-success table-striped">
+      <table class="">
         <thead>
           <tr>
             <th scope="col">N°</th>
