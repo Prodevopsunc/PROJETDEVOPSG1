@@ -1,0 +1,46 @@
+services:
+  site-wordpress:
+    image: wordpress:php8.3-apache
+    container_name: site-wordpress
+    #ports:
+    #  - 8083:80
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: wppassword
+      WORDPRESS_DB_NAME: wpdatabase
+    depends_on:
+      - database
+    networks:
+      website-networks:
+        ipv4_address: 172.28.0.15
+      site-proxy:
+        ipv4_address: 172.29.0.21
+
+  database:
+    image: mysql:8.3.0
+    container_name: db_wordpress
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=wpdatabase
+      - MYSQL_USER=wp_user
+      - MYSQL_PASSWORD=wppassword
+    networks:
+      website-networks:
+        ipv4_address: 172.28.0.16
+      site-proxy:
+        ipv4_address: 172.29.0.20
+      
+
+networks:
+  website-networks:
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+          gateway: 172.28.0.1
+          
+  site-proxy:
+    external: true
+

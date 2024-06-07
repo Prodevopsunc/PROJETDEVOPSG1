@@ -1,0 +1,43 @@
+services:
+  #nom_service
+  site-membre:
+    #builder l'image du Dockerfile
+    build: .
+
+    #image utilisée
+    image: kebeyah/python:3.12.3-alpine
+
+    #le nom du container
+    container_name: site-python
+
+    #les ressource du containeur
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 512M
+
+    #exposition_port
+  #  ports:
+ #     - 8080:8081
+    #gestion_reseau
+    networks:
+       default:
+          #l'adresse ip du containeur$ 
+           ipv4_address: 172.32.0.10
+       site-proxy:
+           ipv4_address: 172.29.0.19
+
+networks:
+  default:
+    name: site-python
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.32.0.0/16
+          gateway: 172.32.0.1
+
+# Reseau proxy
+  site-proxy:
+    external: true

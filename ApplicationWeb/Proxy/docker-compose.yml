@@ -1,0 +1,45 @@
+# CREATION DES SERVICES
+services:
+  proxy:
+# LE DOSSIER DANS LEQUEL SE TROUVE LE DOCKERFILE
+    build: proxy
+# LE NOM DE L'IMAGE PERSONALISÉE D'APACHE2
+    image: kebeyah/apache2:2.4-20.04_beta
+
+    # LE NOM DU CONTAINER
+    container_name: serveur-proxy
+
+  # LES VOLUMES MONTÉS POUR LES SITE WEB
+    volumes:
+     # - ./proxy:/srv/www
+      - ./apache2.conf:/etc/apache2/apache2.conf
+
+#limitation des ressource du containeur
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 512M
+
+  # LE RESEAU DEFINI POUR LE CONTAINER
+    networks:
+      default:
+  # L'ADRESSE IP FIXE DU CONTAINER
+        ipv4_address: 172.29.0.3
+
+  # LE PORT DU CONTAINER EXPOSÉ AVEC LE PORT DE LA MACHINE LOCALE
+    ports:
+      - 80:80
+
+# DEFINITION DU RESEAU DU CONTAINER
+networks:
+  default:
+    name: site-proxy
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.29.0.0/16
+          gateway: 172.29.0.1
+
+

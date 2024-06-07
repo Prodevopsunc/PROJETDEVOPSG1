@@ -1,0 +1,29 @@
+services:
+  site-mkdocs:
+    build: mkdocs/mkdocs
+    image: kebeyah/python-mkdocs:v.1.1
+    container_name: site-mkdocs
+  
+    volumes:
+      - ./mkdocs/mkdocs/site:/mkdocsapp/site
+
+    networks:
+        default:
+          #l'adresse ip du containeur
+           ipv4_address: 172.30.0.14
+        site-proxy:
+           
+
+networks:
+  default:
+    name: rx_mkdocs
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16
+          gateway: 172.30.0.1
+
+ #Reseau proxy
+  site-proxy:
+    external: true
