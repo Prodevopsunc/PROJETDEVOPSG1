@@ -16,6 +16,8 @@ services:
         ipv4_address: 172.28.0.15
       site-proxy:
         ipv4_address: 172.29.0.21
+        
+        
 
   database:
     image: mysql:8.3.0

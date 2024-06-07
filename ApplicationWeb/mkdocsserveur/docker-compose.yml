@@ -1,18 +1,24 @@
 services:
   site-mkdocs:
-    build: mkdocs/mkdocs
+    build: sitemkdocs
     image: kebeyah/python-mkdocs:v.1.1
-    container_name: site-mkdocs
-  
+    container_name: mkdocs-site
+
     volumes:
-      - ./mkdocs/mkdocs/site:/mkdocsapp/site
+      - ./sitemkdocs/site:/sitemkdocs/site
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 512M
 
     networks:
-        default:
+       default:
           #l'adresse ip du containeur
-           ipv4_address: 172.30.0.14
-        site-proxy:
-           
+         ipv4_address: 172.30.0.11
+       site-proxy:
+         ipv4_address: 172.29.0.4
 
 networks:
   default:
@@ -24,6 +30,6 @@ networks:
         - subnet: 172.30.0.0/16
           gateway: 172.30.0.1
 
- #Reseau proxy
+# LE RESEAU DU PROXY
   site-proxy:
     external: true
