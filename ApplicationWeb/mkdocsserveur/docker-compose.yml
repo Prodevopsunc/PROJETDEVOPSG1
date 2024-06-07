@@ -1,11 +1,11 @@
 services:
   site-mkdocs:
-    build: sitemkdocs
-    image: kebeyah/python-mkdocs:v.1.1
+    build: appmkdocs
+    image: djibril652/python-mkdocs:v.0.1
     container_name: mkdocs-site
 
     volumes:
-      - ./sitemkdocs/site:/sitemkdocs/site
+      - ./appmkdocs/site:/appmkdocs/site
 
     deploy:
       resources:

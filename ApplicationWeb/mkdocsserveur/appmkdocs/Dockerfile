@@ -6,7 +6,7 @@ RUN pip install mkdocs
 
 
 #accès au dossier de travail
-WORKDIR /sitemkdocs
+WORKDIR /appmkdocs
 
 #copie du contenu en cours vers le repertoire mkdocsapp
 COPY . .
@@ -15,7 +15,7 @@ COPY . .
 RUN mkdocs build
 
 #accès au dossier site
-WORKDIR /sitemkdocs/site
+WORKDIR /appmkdocs/site
 
 #exposition du port par defaut du container
 EXPOSE 8000
