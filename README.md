@@ -1,1 +1,57 @@
-# PROJETDEVOPSG1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetDevOps UNC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+    <h2>Liste des membres du groupe1</h2>
+      <table class="table table-success table-striped">
+        <thead>
+          <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom<t</th>
+            <th scope="col">Profil LinkedIn </th>
+            <th scope="col">Profil Github</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Ibrahima Sory</td>
+            <td>FOFANA</td>
+            <td><a href="https://www.linkedin.com/in/ibrahima-sory-fofana-37980a294/">voir profil<a/></td>
+            <td><a href="https://github.com/kebeyah">voir profil<a/></td>
+          </tr>
+          <tr>
+        <td>2</td>
+            <td>Aissatou Djibril</td>
+            <td>DIALLO</td>
+            <td><a href="https://www.linkedin.com/in/a%C3%AFssatou-djibril-diallo-0203b0268/">voir profil<a/></td>
+            <td><a href="https://github.com/djibrilenpt">voir profil<a/>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Aboubacar</td>
+            <td>KANTE</td>
+            <td><a href="https://www.linkedin.com/in/stik-kante-2964821a6/">voir profil<a/></td>
+            <td><a href="https://github.com/stikante">voir profil<a/>
+          </tr> 
+          <tr>
+            <td>4</td>
+            <td>Mathieu</td>
+            <td>BEAVOGUI</td>
+            <td><a href="">voir profil<a/></td>
+            <td><a href="https://github.com/mathieubeavogui">voir profil<a/>
+          </tr>
+        </tbody>
+      </table>
+    
+    
+</body>
+</html>
