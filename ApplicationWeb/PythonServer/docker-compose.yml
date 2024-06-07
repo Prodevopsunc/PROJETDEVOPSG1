@@ -5,7 +5,7 @@ services:
     build: .
 
     #image utilisée
-    image: kebeyah/python:3.12.3-alpine
+    image: djibril652/python:3.12.3-alpine
 
     #le nom du container
     container_name: site-python

@@ -1,6 +1,7 @@
 services:
   site-wordpress:
-    image: wordpress:php8.3-apache
+    build: wordpress
+    image: djibril652/wordpress:php8.3-apache
     container_name: site-wordpress
     #ports:
     #  - 8083:80
@@ -20,7 +21,8 @@ services:
         
 
   database:
-    image: mysql:8.3.0
+    build: mysql
+    image: djibril652/mysql:8.3.0
     container_name: db_wordpress
     environment:
       - MYSQL_ROOT_PASSWORD=password

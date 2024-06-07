@@ -4,7 +4,7 @@ services:
 # LE DOSSIER DANS LEQUEL SE TROUVE LE DOCKERFILE
     build: proxy
 # LE NOM DE L'IMAGE PERSONALISÉE D'APACHE2
-    image: kebeyah/apache2:2.4-20.04_beta
+    image: djibril652/apache2:2.4-20.04_beta
 
     # LE NOM DU CONTAINER
     container_name: serveur-proxy
