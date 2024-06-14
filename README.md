@@ -19,7 +19,6 @@
       <td>FOFANA</td>
       <td><a href="https://www.linkedin.com/in/ibrahima-sory-fofana-37980a294/">voir profil</a></td>
       <td><a href="https://github.com/kebeyah">voir profil</a></td>
-      <td><a href="https://github.com/kebeyah">voir profil</a></td>
       <td><a href="https://hub.docker.com/u/fofana2015">voir profil</a></td>
     </tr>
     <tr>
